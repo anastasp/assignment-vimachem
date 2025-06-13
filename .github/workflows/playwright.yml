@@ -27,9 +27,15 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       
+      - name: Install Playwright CLI
+        run: dotnet tool install --global Microsoft.Playwright.CLI
+      
+      - name: Build project to ensure Playwright assets are available
+        run: dotnet build --configuration Release
+      
       - name: Install Playwright browsers
         run: |
-          dotnet tool install --global Microsoft.Playwright.CLI
+          cd ContactListAutomation/bin/Release/net9.0
           playwright install --with-deps chromium
       
       - name: Run tests
