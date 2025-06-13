@@ -1,0 +1,44 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
+
+jobs:
+  test:
+    name: Run Playwright Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 9.0.x
+      
+      - name: Install dependencies
+        run: dotnet restore
+      
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      
+      - name: Install Playwright browsers
+        run: |
+          dotnet tool install --global Microsoft.Playwright.CLI
+          playwright install --with-deps chromium
+      
+      - name: Run tests
+        run: dotnet run --project ContactListAutomation/ContactListAutomation.csproj --configuration Release
+      
+      - name: Upload screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: error-screenshots
+          path: error-*.png
+          retention-days: 30

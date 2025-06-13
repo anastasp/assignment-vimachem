@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ur1/+T7gT+4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\h.anastasopoulos\\Documents\\augment-projects\\assignment-automation\\ContactListAutomation\\ContactListAutomation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\h.anastasopoulos\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\h.anastasopoulos\\.nuget\\packages\\microsoft.playwright\\1.52.0\\microsoft.playwright.1.52.0.nupkg.sha512",
+    "C:\\Users\\h.anastasopoulos\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\h.anastasopoulos\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\h.anastasopoulos\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\h.anastasopoulos\\.nuget\\packages\\system.text.json\\6.0.10\\system.text.json.6.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
